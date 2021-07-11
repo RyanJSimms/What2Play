@@ -4,7 +4,7 @@ class GamesController < ApplicationController
   def index
     # games = Game.all
     # render json: games
-    response = HTTP.get("https://api.rawg.io/api/games?key=#{Rails.application.credentials.rawg_api_key}&page=1&page_size=10")
+    response = HTTP.get("https://api.rawg.io/api/games?key=#{Rails.application.credentials.rawg_api_key}&&page_size=40")
     data = JSON.parse(response.body)
     render json: data
   end
